@@ -1,1 +1,100 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@import '~@angular/material/theming';
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+$md-primary: (
+    50 : #e1e3e7,
+    100 : #b3b9c2,
+    200 : #818b9a,
+    300 : #4f5c71,
+    400 : #293952,
+    500 : #031634,
+    600 : #03132f,
+    700 : #021027,
+    800 : #020c21,
+    900 : #010615,
+    A100 : #5569ff,
+    A200 : #223cff,
+    A400 : #001cee,
+    A700 : #0019d4,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #ffffff,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #ffffff,
+        A200 : #ffffff,
+        A400 : #ffffff,
+        A700 : #ffffff,
+    )
+);
+
+$md-accent: (
+    50 : #e1edec,
+    100 : #b3d1d1,
+    200 : #81b2b2,
+    300 : #4f9393,
+    400 : #297c7b,
+    500 : #036564,
+    600 : #035d5c,
+    700 : #025352,
+    800 : #024948,
+    900 : #013736,
+    A100 : #6efffb,
+    A200 : #3bfffa,
+    A400 : #08fff9,
+    A700 : #00eee8,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #ffffff,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$loot-goblin-angular-primary: mat-palette($md-primary);
+$loot-goblin-angular-accent: mat-palette($md-accent);
+
+// The warn palette is optional (defaults to red).
+$loot-goblin-angular-warn: mat-palette($mat-red);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$loot-goblin-angular-theme: mat-dark-theme($loot-goblin-angular-primary, $loot-goblin-angular-accent, $loot-goblin-angular-warn);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($loot-goblin-angular-theme);
+
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
